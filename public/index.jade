@@ -1,0 +1,28 @@
+doctype
+html
+  head
+    title Test
+  body
+    ul#main
+    script(src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.3/zepto.min.js")
+    script.
+
+      function kimonoCallback(data) {
+          $.each(data.results.collection1, function(index, value) {
+            if(value.hTitle.text) {
+                $('#main').append('<li>' +
+                  value.hTitle.text + '<br/>' +
+                  (value.hDetails) +
+                  value.hTimeOne.alt + value.hTimeTwo.alt + ':' + value.hTimeThree.alt + value.hTimeFour.alt +
+                  '</li>')
+            }
+          });
+        // do something with the data
+        // please make sure the scope of this function is global
+      }
+
+      $.ajax({
+        "url":"http://www.kimonolabs.com/api/cutenv2y?apikey=4082701fda5e9ac55d10add137718ea6&callback=kimonoCallback",
+        "crossDomain":true,
+        "dataType":"jsonp"
+      });
