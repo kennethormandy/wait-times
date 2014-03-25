@@ -1,0 +1,244 @@
+{
+  "name": "Edmonton Emergency",
+  "count": 10,
+  "frequency": "hourly",
+  "version": 465,
+  "newdata": true,
+  "lastrunstatus": "success",
+  "lastsuccess": "Tue Mar 25 2014 09:17:09 GMT+0000 (UTC)",
+  "nextrun": "Tue Mar 25 2014 10:17:09 GMT+0000 (UTC)",
+  "results": {
+    "data": [
+      {
+        "hTitle": {
+          "href": "http://www.albertahealthservices.ca/facilities.asp?pid=facility&rid=3880",
+          "text": "Grey Nuns Community Hospital"
+        },
+        "hDetails": "",
+        "hTimeOne": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeTwo": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/01.gif",
+          "alt": "1"
+        },
+        "hTimeThree": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/01.gif",
+          "alt": "1"
+        },
+        "hTimeFour": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/03.gif",
+          "alt": "3"
+        }
+      },
+      {
+        "hTitle": {
+          "href": "http://www.albertahealthservices.ca/facilities.asp?pid=facility&rid=7825",
+          "text": "Leduc Community Hospital"
+        },
+        "hDetails": "",
+        "hTimeOne": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeTwo": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeThree": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/03.gif",
+          "alt": "3"
+        },
+        "hTimeFour": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        }
+      },
+      {
+        "hTitle": {
+          "href": "http://www.albertahealthservices.ca/facilities.asp?pid=facility&rid=7820",
+          "text": "Misericordia Community Hospital"
+        },
+        "hDetails": "",
+        "hTimeOne": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeTwo": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeThree": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/03.gif",
+          "alt": "3"
+        },
+        "hTimeFour": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/04.gif",
+          "alt": "4"
+        }
+      },
+      {
+        "hTitle": {
+          "href": "http://www.albertahealthservices.ca/facilities.asp?pid=facility&rid=3904",
+          "text": "Northeast Community Health Centre"
+        },
+        "hDetails": "",
+        "hTimeOne": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeTwo": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/01.gif",
+          "alt": "1"
+        },
+        "hTimeThree": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/01.gif",
+          "alt": "1"
+        },
+        "hTimeFour": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        }
+      },
+      {
+        "hTitle": {
+          "href": "http://www.albertahealthservices.ca/facilities.asp?pid=facility&rid=6598",
+          "text": "Royal Alexandra Hospital"
+        },
+        "hDetails": "",
+        "hTimeOne": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeTwo": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/01.gif",
+          "alt": "1"
+        },
+        "hTimeThree": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeFour": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/07.gif",
+          "alt": "7"
+        }
+      },
+      {
+        "hTitle": {
+          "href": "http://www.albertahealthservices.ca/facilities.asp?pid=facility&rid=1024457",
+          "text": "Stollery Children's Hospital"
+        },
+        "hDetails": "For Patients 16 & Under",
+        "hTimeOne": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeTwo": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/01.gif",
+          "alt": "1"
+        },
+        "hTimeThree": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/05.gif",
+          "alt": "5"
+        },
+        "hTimeFour": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/04.gif",
+          "alt": "4"
+        }
+      },
+      {
+        "hTitle": {
+          "href": "http://www.albertahealthservices.ca/facilities.asp?pid=facility&rid=1000932",
+          "text": "Sturgeon Community Hospital"
+        },
+        "hDetails": "This location is in St. Albert",
+        "hTimeOne": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeTwo": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeThree": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/03.gif",
+          "alt": "3"
+        },
+        "hTimeFour": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        }
+      },
+      {
+        "hTitle": {
+          "href": "http://www.albertahealthservices.ca/facilities.asp?pid=facility&rid=6600",
+          "text": "University of Alberta Hospital"
+        },
+        "hDetails": "",
+        "hTimeOne": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeTwo": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeThree": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/03.gif",
+          "alt": "3"
+        },
+        "hTimeFour": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        }
+      },
+      {
+        "hTitle": {
+          "href": "http://www.albertahealthservices.ca/facilities.asp?pid=facility&rid=8828",
+          "text": "WestView Health Centre"
+        },
+        "hDetails": "This location is in Stony Plain",
+        "hTimeOne": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeTwo": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/01.gif",
+          "alt": "1"
+        },
+        "hTimeThree": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeFour": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/08.gif",
+          "alt": "8"
+        }
+      },
+      {
+        "hTitle": {
+          "href": "http://www.albertahealthservices.ca/facilities.asp?pid=facility&rid=8274",
+          "text": "Fort Sask Community Hospital"
+        },
+        "hDetails": "",
+        "hTimeOne": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeTwo": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        },
+        "hTimeThree": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/03.gif",
+          "alt": "3"
+        },
+        "hTimeFour": {
+          "src": "http://www12.albertahealthservices.ca/repacPublic/gif/00.gif",
+          "alt": "0"
+        }
+      }
+    ]
+  }
+}

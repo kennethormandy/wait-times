@@ -20,6 +20,21 @@ html(lang="en")
     a(href="#").mContact
       strong Speak with us directly
       p If there is an emergency, call <strong>911</strong> immediately. If you’re looking for help or to provide feedback to Vancouver Costal Health, go here.
+
+    //- input(type="radio" id="wait" name="sort" v-model="sort" value="wait")
+    //- label(for="wait") wait
+    //- br
+    //- input(type="radio" id="distance" name="sort" v-model="sort" value="distance")
+    //- label(for="distance") distance
+
     .main#main
+      ul.hList
+        li.hItem(v-repeat="hospitals | sortBy " data-heat="{{hTimeTwo.alt}}")
+          a.hLink(href="{{hTitle.href}}")
+            time.hTime {{value.hTimeOne.alt}}{{hTimeTwo.alt}}:{{hTimeThree.alt}}{{hTimeFour.alt}}
+            .hContent
+              h2.hTitle {{hTitle.text}}
+              h3 {{data.login}}
+              span.hDetails {{hDetails}}
     script(src="js/dug.js")
     script(src="js/bundle.js")

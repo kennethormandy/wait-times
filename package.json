@@ -4,8 +4,10 @@
   "description": "The average wait times in Edmonton and area hospitals.",
   "main": "harp server",
   "dependencies": {
+    "browser-request": "^0.3.1",
     "domready": "^1.0.4",
-    "fastclick": "^1.0.0"
+    "fastclick": "^1.0.0",
+    "vue": "^0.10.2"
   },
   "devDependencies": {
     "browserify": "^3.33.0",
