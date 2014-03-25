@@ -2,27 +2,45 @@ doctype
 html
   head
     title Test
+    link(href="css/main.css" type="text/css" rel="stylesheet")
+
+    meta(charset="utf-8")
+    meta(name="description" content="")
+    meta(name="author" content="")
+    meta(name="handheldfriendly" content="true")
+    meta(name="mobileoptimized" content="320")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="cleartype" content="on")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    meta(name="apple-mobile-web-app-capable" content="yes")
+
   body
-    ul#main
+    a(href="#").mContact
+      strong Speak with us directly
+      p If there is an emergency, call <strong>911</strong> immediately. If you’re looking for help or to provide feedback to Vancouver Costal Health, go here.
+    ul.hList#main
+    script(src="http://html5shiv.googlecode.com/svn/trunk/html5.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.11/fastclick.min.js")
     script(src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.3/zepto.min.js")
     script.
 
-      function kimonoCallback(data) {
+      function callback(data) {
           $.each(data.results.collection1, function(index, value) {
             if(value.hTitle.text) {
-                $('#main').append('<li>' +
-                  value.hTitle.text + '<br/>' +
-                  (value.hDetails) +
-                  value.hTimeOne.alt + value.hTimeTwo.alt + ':' + value.hTimeThree.alt + value.hTimeFour.alt +
-                  '</li>')
+                $('#main').append(
+                  '<li class="hItem" data-heat="' + value.hTimeTwo.alt + '">' +
+                  '<a class="hLink" href="' + value.hTitle.href + '">' +
+                  '<time class="hTime">' + value.hTimeOne.alt + value.hTimeTwo.alt + ':' +
+                  value.hTimeThree.alt + value.hTimeFour.alt + '</time>' +
+                  '<div class="hContent"><h2 class="hTitle">' + value.hTitle.text + '</h2>' +
+                  '<span class="hDetails">' + value.hDetails + '</span></div>' +
+                  '</a></li>')
             }
           });
-        // do something with the data
-        // please make sure the scope of this function is global
       }
 
       $.ajax({
-        "url":"http://www.kimonolabs.com/api/cutenv2y?apikey=4082701fda5e9ac55d10add137718ea6&callback=kimonoCallback",
+        "url":"http://www.kimonolabs.com/api/cutenv2y?apikey=4082701fda5e9ac55d10add137718ea6&callback=callback",
         "crossDomain":true,
         "dataType":"jsonp"
       });

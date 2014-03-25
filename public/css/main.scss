@@ -1,0 +1,123 @@
+@import "variables";
+@import "normalize";
+@import "bourbon/bourbon";
+
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  @include box-sizing(border-box);
+}
+
+html {
+  height: 100%;
+  font-family: "Avenir Next", Verdana, sans-serif;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+p {
+  margin: 0;
+}
+
+.mContact {
+  border: 2px solid black;
+  display: block;
+  margin: 1em 1em 1.5em 1em;
+  padding: 1em;
+  line-height: 1.25;
+  border-radius: 3px;
+}
+
+.hList {
+  border-top: 1px solid #000;
+}
+
+.hItem {
+  border-bottom: 1px solid #000;
+  float: left;
+}
+
+.hItem,
+.hList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+}
+
+.hLink {
+  display: block;
+  padding: 1em;
+  float: left;
+  width: 100%;
+}
+
+.hTitle {
+  margin: 0;
+  font-size: 1em
+}
+
+.hDetails {
+
+}
+
+.hContent {
+  float: left;
+  display: block;
+}
+
+.hTime {
+  display: block;
+  font-size: 1.25em;
+  width: 5em;
+  float: left;
+}
+
+[data-heat="0"] {
+  background: darken(#FFF, (5% * 0));
+}
+
+[data-heat="1"] {
+  background: darken(#FFF, (5% * 1));
+}
+
+[data-heat="2"] {
+  background: darken(#FFF, (5% * 2));
+}
+
+[data-heat="3"] {
+  background: darken(#FFF, (5% * 3));
+}
+
+[data-heat="4"] {
+  background: darken(#FFF, (5% * 4));
+}
+
+[data-heat="5"] {
+  background: darken(#FFF, (5% * 5));
+}
+
+[data-heat="6"] {
+  background: darken(#FFF, (5% * 6));
+}
+
+[data-heat="7"] {
+  background: darken(#FFF, (5% * 7));
+}
+
+[data-heat="8"] {
+  background: lighten(orange, 37.5%);
+}
+
+[data-heat="9"] {
+  background: lighten(orange, 37.5%);
+}
+
+[data-heat="10"] {
+  background: lighten(orange, 37.5%);
+}
