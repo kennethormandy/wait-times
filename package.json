@@ -1,5 +1,5 @@
 {
-  "name": "wait-app",
+  "name": "wait-times",
   "version": "0.1.0",
   "description": "The average wait times in Edmonton and area hospitals.",
   "main": "harp server",
