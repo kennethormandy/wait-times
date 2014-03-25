@@ -20,10 +20,6 @@ html(lang="en")
     a(href="#").mContact
       strong Speak with us directly
       p If there is an emergency, call <strong>911</strong> immediately. If you’re looking for help or to provide feedback to Vancouver Costal Health, go here.
-    ul.hList#main
-    if environment === 'development'
-      script(src="../node_modules/fastclick.js")
-      script(src="../node_modules/dug.js")
-      script(src="js/main.js")
-    else
-      script(src="js/bundle.js")
+    .main#main
+    script(src="js/dug.js")
+    script(src="js/bundle.js")
