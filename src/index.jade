@@ -1,0 +1,29 @@
+doctype
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<!--[if gte IE 9]><!-->
+html(lang="en")
+  <!--<![endif]-->
+  head
+    title= title
+    link(href="css/main.css" type="text/css" rel="stylesheet")
+    meta(charset="utf-8")
+    meta(name="description" content="")
+    meta(name="author" content="")
+    meta(name="handheldfriendly" content="true")
+    meta(name="mobileoptimized" content="320")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="cleartype" content="on")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  body
+    a(href="#").mContact
+      strong Speak with us directly
+      p If there is an emergency, call <strong>911</strong> immediately. If you’re looking for help or to provide feedback to Vancouver Costal Health, go here.
+    ul.hList#main
+    if environment === 'development'
+      script(src="../node_modules/fastclick.js")
+      script(src="../node_modules/dug.js")
+      script(src="js/main.js")
+    else
+      script(src="js/bundle.js")

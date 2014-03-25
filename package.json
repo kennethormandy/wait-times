@@ -1,0 +1,30 @@
+{
+  "name": "wait-app",
+  "version": "0.1.0",
+  "description": "The average wait times in Edmonton and area hospitals.",
+  "main": "harp server",
+  "dependencies": {
+    "Dug.js": "rogie/Dug.js",
+    "domready": "^1.0.4",
+    "fastclick": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^3.33.0",
+    "mocha": "^1.18.2"
+  },
+  "scripts": {
+    "test": "node node_modules/mocha",
+    "start": "harp server src",
+    "compile": "harp compile src www && browserify src/js/main.js -o www/js/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kennethormandy/wait-times"
+  },
+  "author": "Kenneth Ormandy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kennethormandy/wait-times/issues"
+  },
+  "homepage": "http://kennethormandy.com"
+}
