@@ -19,13 +19,13 @@ html(lang="en")
   body
     a(href="#").mContact
       strong Speak with us directly
-      p If there is an emergency, call <strong>911</strong> immediately. If you’re looking for help or to provide feedback to Vancouver Costal Health, go here.
+      p Call <strong>911</strong> unless this is a non-critical injury.
 
-    //- input(type="radio" id="wait" name="sort" v-model="sort" value="wait")
-    //- label(for="wait") wait
-    //- br
-    //- input(type="radio" id="distance" name="sort" v-model="sort" value="distance")
-    //- label(for="distance") distance
+    form.form
+      input.radio-split#radio-wait(type="radio" name="sort" v-model="sort" value="wait" checked="checked")
+      label(for="radio-wait") wait
+      input.radio-split#radio-distance(type="radio" name="sort" v-model="sort" value="distance")
+      label(for="radio-distance") distance
 
     .main#main
       ul.hList
