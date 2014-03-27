@@ -5524,7 +5524,7 @@ var render = new Vue({
     el: '#main',
 
     data: {
-      field: 'title',
+      key: 'time',
       reverse: false
     },
 
@@ -5542,9 +5542,12 @@ var render = new Vue({
         xhr.open('GET', apiURL);
         xhr.onload = function () {
           self.items = JSON.parse(xhr.responseText).results.data;
-          self.items.forEach(function(h) {
+          self.items.forEach(function(h, i) {
             h.title = h.hTitle.text;
-            h.time = h.hTimeOne.alt.toString() + h.hTimeTwo.alt.toString() + ':' + h.hTimeThree.alt.toString() + h.hTimeFour.alt.toString();
+            h.id = h.hTitle.href.split('rid=')[1];
+            h.hours = h.hTimeOne.alt.toString() + h.hTimeTwo.alt.toString();
+            h.minutes = h.hTimeThree.alt.toString() + h.hTimeFour.alt.toString();
+            h.time = h.hours + ':' + h.minutes;
             h.details = h.hDetails;
           });
         }

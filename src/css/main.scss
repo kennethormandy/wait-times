@@ -105,43 +105,43 @@ p {
   float: left;
 }
 
-[data-heat="0"] {
+[data-heat="00"] {
   background: darken(#FFF, (5% * 0));
 }
 
-[data-heat="1"] {
+[data-heat="01"] {
   background: darken(#FFF, (5% * 1));
 }
 
-[data-heat="2"] {
+[data-heat="02"] {
   background: darken(#FFF, (5% * 2));
 }
 
-[data-heat="3"] {
+[data-heat="03"] {
   background: darken(#FFF, (5% * 3));
 }
 
-[data-heat="4"] {
+[data-heat="04"] {
   background: darken(#FFF, (5% * 4));
 }
 
-[data-heat="5"] {
+[data-heat="05"] {
   background: darken(#FFF, (5% * 5));
 }
 
-[data-heat="6"] {
+[data-heat="06"] {
   background: darken(#FFF, (5% * 6));
 }
 
-[data-heat="7"] {
+[data-heat="07"] {
   background: darken(#FFF, (5% * 7));
 }
 
-[data-heat="8"] {
+[data-heat="08"] {
   background: lighten(orange, 37.5%);
 }
 
-[data-heat="9"] {
+[data-heat="09"] {
   background: lighten(orange, 37.5%);
 }
 

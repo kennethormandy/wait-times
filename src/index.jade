@@ -29,7 +29,7 @@ html(lang="en")
 
     .main#main
       ul.hList
-        li.hItem(v-repeat="items | orderBy field" data-heat="{{time}}")
+        li.hItem(v-repeat="items | orderBy key" data-heat="{{hours}}")
           a.hLink(href="http://www.albertahealthservices.ca/facilities.asp?pid=facility&rid={{id}}")
             time.hTime {{time}}
             .hContent
