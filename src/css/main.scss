@@ -148,3 +148,10 @@ p {
 [data-heat="10"] {
   background: lighten(orange, 37.5%);
 }
+
+
+#map-canvas {
+  display: none;
+  visibility: hidden;
+  height: 0px;
+}

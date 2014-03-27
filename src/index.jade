@@ -37,7 +37,7 @@ html(lang="en")
             time.hTime {{wait}}
             .hContent
               h2.hTitle {{name}}
-              span.hDetails {{details}}
-
-    script(src="http://maps.google.com/maps/api/js?sensor=true&libraries=geometry")
+              span.hDetails {{details}}<br/>
+              p(v-if="duration") {{duration}} drive
+    script(src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=geometry")
     script(src="js/bundle.js")

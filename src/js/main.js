@@ -28,7 +28,7 @@ var vm = new Vue({
         xhr.onload = function () {
           self.items = JSON.parse(xhr.responseText).results.data;
           self.items.forEach(function(h, i) {
-            h.name = h.hTitle.text;
+            h.name = h.hTitle.text.replace('\'', '’');
             h.id = h.hTitle.href.split('rid=')[1];
             h.hours = h.hTimeOne.alt.toString() + h.hTimeTwo.alt.toString();
             h.minutes = h.hTimeThree.alt.toString() + h.hTimeFour.alt.toString();
@@ -57,7 +57,9 @@ var vm = new Vue({
       },
 
       locate: function(e) {
-        findMyLocation(e.targetVM.location, e.targetVM.$data.items);
+        findMyLocation(e.targetVM.location, e.targetVM.$data.items, function(e) {
+          alert(e);
+        });
         // Should wait until findMyLocation is done
         e.targetVM.rank('distance', e);
       }
@@ -74,12 +76,6 @@ function findMyLocation(location, items) {
 
   var edmonton = new google.maps.LatLng(53.544389, -113.490927);
   var browserSupportFlag = new Boolean();
-
-  // var myOptions = {
-  //   zoom: 6,
-  //   mapTypeId: google.maps.MapTypeId.ROADMAP
-  // };
-  // var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
 
   // Try W3C Geolocation (Preferred)
   if(navigator.geolocation) {
@@ -113,17 +109,27 @@ function findMyLocation(location, items) {
 
 function findMyDistanceList(from, items) {
   var geocoder = new google.maps.Geocoder();
+  var service = new google.maps.DistanceMatrixService();
+  var myOptions = {
+  };
+  var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+
   items.forEach(function(h, i) {
-
-    geocoder.geocode( { 'address': h.address }, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        var to = results[0].geometry.location;
-        h.distance = google.maps.geometry.spherical.computeDistanceBetween(from, to);
+    service.getDistanceMatrix({
+      origins: [from],
+      destinations: [h.address],
+      travelMode: google.maps.TravelMode.DRIVING,
+      unitSystem: google.maps.UnitSystem.METRIC,
+      avoidHighways: false,
+      avoidTolls: false
+    }, function (response, status) {
+      if (status != google.maps.DistanceMatrixStatus.OK) {
+        alert('Error was: ' + status);
+      } else {
+        h.distance = response.rows[0].elements[0].duration.value;
+        h.duration = response.rows[0].elements[0].duration.text;
       }
-
     });
-
-
 
   });
 
