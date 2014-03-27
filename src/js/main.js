@@ -30,34 +30,31 @@ var vm = new Vue({
         request({
           url: apiURL,
           type: 'jsonp',
-          jsonpCallback: 'apikey',
+          jsonpCallback: 'callback',
           jsonpCallbackName: 'kimonoCallback',
           success: function(resp) {
-            // self.items = JSON.parse(resp.xhr.responseText).results.data;
-            // self.items.forEach(function(h, i) {
-            //   h.name = h.hTitle.text.replace('\'', '’');
-            //   h.id = h.hTitle.href.split('rid=')[1];
-            //   h.hours = h.hTimeOne.alt.toString() + h.hTimeTwo.alt.toString();
-            //   h.minutes = h.hTimeThree.alt.toString() + h.hTimeFour.alt.toString();
-            //   h.wait = h.hours + ':' + h.minutes;
-            //   if(h.hDetails) {
-            //     h.details = h.hDetails;
-            //   }
-            //   if(h.details && h.details.indexOf('This location is in ') !== -1) {
-            //     h.address = h.name + ', ' + h.details.split('This location is in ')[1] + ', AB, Canada';
-            //   } else if(h.name.split(' Community')[0] === 'Leduc') {
-            //     h.address = h.name + ', Leduc, AB, Canada';
-            //     h.details = 'This location is in Leduc';
-            //   } else if(h.name.split(' Community')[0] === 'Fork Sask') {
-            //     h.address = h.name + ', Fort Saskatchewan, AB, Canada';
-            //     h.details = 'This location is in Fort Saskatchewan';
-            //   } else {
-            //     h.address = h.name + ', Edmonton, AB, Canada';
-            //   }
-            // });
-          },
-          complete: function(resp) {
-            console.log(resp);
+            self.items = resp.results.data;
+            self.items.forEach(function(h, i) {
+              h.name = h.hTitle.text.replace('\'', '’');
+              h.id = h.hTitle.href.split('rid=')[1];
+              h.hours = h.hTimeOne.alt.toString() + h.hTimeTwo.alt.toString();
+              h.minutes = h.hTimeThree.alt.toString() + h.hTimeFour.alt.toString();
+              h.wait = h.hours + ':' + h.minutes;
+              if(h.hDetails) {
+                h.details = h.hDetails;
+              }
+              if(h.details && h.details.indexOf('This location is in ') !== -1) {
+                h.address = h.name + ', ' + h.details.split('This location is in ')[1] + ', AB, Canada';
+              } else if(h.name.split(' Community')[0] === 'Leduc') {
+                h.address = h.name + ', Leduc, AB, Canada';
+                h.details = 'This location is in Leduc';
+              } else if(h.name.split(' Community')[0] === 'Fork Sask') {
+                h.address = h.name + ', Fort Saskatchewan, AB, Canada';
+                h.details = 'This location is in Fort Saskatchewan';
+              } else {
+                h.address = h.name + ', Edmonton, AB, Canada';
+              }
+            });
           }
         })
       },
