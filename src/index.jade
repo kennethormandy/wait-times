@@ -17,22 +17,24 @@ html(lang="en")
     meta(name="apple-mobile-web-app-capable" content="yes")
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   body
-    a(href="#").mContact
-      strong Speak with us directly
-      p Call <strong>911</strong> unless this is a non-critical injury.
-
-    form.form
-      input.radio-split#radio-wait(type="radio" name="sort" value="wait" checked="checked" v-on="checked: sort = 'wait'")
-      label(for="radio-wait") wait
-      input.radio-split#radio-distance(type="radio" name="sort" value="distance" v-on="checked: sort = 'distance'")
-      label(for="radio-distance") distance
-
     .main#main
+
+      a(href="#").mContact
+        strong Speak with us directly
+        p Call <strong>911</strong> unless this is a non-critical injury.
+
+      form.form
+        input.radio-split#radio-wait(type="radio" name="sort" value="wait" checked="checked" v-on="click: sort('wait', $event)")
+        label(for="radio-wait") wait
+        input.radio-split#radio-title(type="radio" name="sort" value="title" v-on="click: sort('name', $event)")
+        label(for="radio-title") name
+
       ul.hList
         li.hItem(v-repeat="items | orderBy key" data-heat="{{hours}}")
           a.hLink(href="http://www.albertahealthservices.ca/facilities.asp?pid=facility&rid={{id}}")
-            time.hTime {{time}}
+            time.hTime {{wait}}
             .hContent
               h2.hTitle {{title}}
               span.hDetails {{details}}
+
     script(src="js/bundle.js")
