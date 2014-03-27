@@ -5524,24 +5524,31 @@ var render = new Vue({
     el: '#main',
 
     data: {
-      sort: 'wait'
+      field: 'title',
+      reverse: false
     },
 
     created: function () {
-      this.$watch('sort', function () {
+      this.ascending = {}
+      // this.$watch('sort', function () {
         this.fetchData()
-      })
+      // })
     },
 
     methods: {
       fetchData: function () {
         var xhr = new XMLHttpRequest();
         var self = this;
-        xhr.open('GET', apiURL)
+        xhr.open('GET', apiURL);
         xhr.onload = function () {
-          self.hospitals = JSON.parse(xhr.responseText).results.data;
+          self.items = JSON.parse(xhr.responseText).results.data;
+          self.items.forEach(function(h) {
+            h.title = h.hTitle.text;
+            h.time = h.hTimeOne.alt.toString() + h.hTimeTwo.alt.toString() + ':' + h.hTimeThree.alt.toString() + h.hTimeFour.alt.toString();
+            h.details = h.hDetails;
+          });
         }
-        xhr.send()
+        xhr.send();
       }
     }
 

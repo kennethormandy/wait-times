@@ -22,19 +22,17 @@ html(lang="en")
       p Call <strong>911</strong> unless this is a non-critical injury.
 
     form.form
-      input.radio-split#radio-wait(type="radio" name="sort" v-model="sort" value="wait" checked="checked")
+      input.radio-split#radio-wait(type="radio" name="sort" value="wait" checked="checked" v-on="checked: sort = 'wait'")
       label(for="radio-wait") wait
-      input.radio-split#radio-distance(type="radio" name="sort" v-model="sort" value="distance")
+      input.radio-split#radio-distance(type="radio" name="sort" value="distance" v-on="checked: sort = 'distance'")
       label(for="radio-distance") distance
 
     .main#main
       ul.hList
-        li.hItem(v-repeat="hospitals | sortBy " data-heat="{{hTimeTwo.alt}}")
-          a.hLink(href="{{hTitle.href}}")
-            time.hTime {{value.hTimeOne.alt}}{{hTimeTwo.alt}}:{{hTimeThree.alt}}{{hTimeFour.alt}}
+        li.hItem(v-repeat="items | orderBy field" data-heat="{{time}}")
+          a.hLink(href="http://www.albertahealthservices.ca/facilities.asp?pid=facility&rid={{id}}")
+            time.hTime {{time}}
             .hContent
-              h2.hTitle {{hTitle.text}}
-              h3 {{data.login}}
-              span.hDetails {{hDetails}}
-    script(src="js/dug.js")
+              h2.hTitle {{title}}
+              span.hDetails {{details}}
     script(src="js/bundle.js")
