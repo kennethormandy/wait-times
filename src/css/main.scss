@@ -7,6 +7,7 @@
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent;
   @include box-sizing(border-box);
+  @include user-select(none);
 }
 
 html {
@@ -33,6 +34,8 @@ p {
 
 .radio-split {
   @include appearance(none);
+  display: none;
+  visibility: hidden;
   & + label {
     width: 50%;
     display: block;
