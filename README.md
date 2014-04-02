@@ -13,16 +13,16 @@ The average wait times in Edmonton and area hospitals, optimised for mobile.
 ## Get started
 
 ```sh
-git clone kennethormandy/wait-times
-npm install
-npm start
+$ git clone kennethormandy/wait-times
+$ npm install
+$ npm start
 # served by Harp at http://localhost:9000
 ```
 
 ## Compiling
 
 ```sh
-npm run-script compile
+$ npm run-script compile
 # compile with Harp and Browserify to www/
 ```
 
