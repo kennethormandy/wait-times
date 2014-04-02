@@ -16,20 +16,25 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
     meta(name="apple-mobile-web-app-capable" content="yes")
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    script(src="js/offline.js")
   body
     .main#main
 
-      a(href="#").mContact
-        strong Speak with us directly
-        p Call <strong>911</strong> unless this is a non-critical injury.
+      header.header
 
-      #map-canvas
+        .header-bar
+          | Edmonton ER Wait Times
+        //- a(href="#").mContact
+        //-   strong Speak with us directly
+        //-   p Call <strong>911</strong> unless this is a non-critical injury.
 
-      form.form
-        input.radio-split#radio-wait(type="radio" name="sort" value="wait" checked="checked" v-on="click: rank('wait', $event)")
-        label(for="radio-wait") wait
-        input.radio-split#radio-distance(type="radio" name="sort" value="distance" v-on="click: locate")
-        label(for="radio-distance") distance
+        #map-canvas
+
+        form.form
+          input.radio-split#radio-wait(type="radio" name="sort" value="wait" checked="checked" v-on="click: rank('wait', $event), tap: rank('wait', $event)")
+          label(for="radio-wait") wait
+          input.radio-split#radio-distance(type="radio" name="sort" value="distance" v-on="click: locate, tap: locate")
+          label(for="radio-distance") distance
 
       ul.hList
         li.hItem(v-repeat="items | orderBy key" data-heat="{{hours}}" data-distance="{{distance}}")
@@ -38,6 +43,8 @@ html(lang="en")
             .hContent
               h2.hTitle {{name}}
               span.hDetails {{details}}<br/>
-              p(v-if="duration") {{duration}} drive
+              p
+                | &nbsp;
+                span(v-if="duration") {{duration}} drive
     script(src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=geometry")
     script(src="js/bundle.js")

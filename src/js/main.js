@@ -2,14 +2,9 @@ var request = require('reqwest');
 var domready = require('domready');
 var attachFastClick = require('fastclick');
 var Vue = require('vue');
+var vueTouch = require('vue-touch');
 
-var apiURL = 'http://www.kimonolabs.com/api/cutenv2y?apikey=4082701fda5e9ac55d10add137718ea6&callback=kimonoCallback';
-// var apiURL = 'js/data.json';
-
-function kimonoCallback(data) {
-  alert(data);
-}
-
+Vue.use(vueTouch);
 var vm = new Vue({
 
     el: '#main',
@@ -17,18 +12,27 @@ var vm = new Vue({
     data: {
       key: 'wait',
       reverse: false,
-      location: false
+      location: false,
+      offline: Offline.state,
+      apiURL: 'http://www.kimonolabs.com/api/cutenv2y?apikey=4082701fda5e9ac55d10add137718ea6&callback=kimonoCallback',
+      localURL: 'js/data.json'
     },
 
     created: function() {
-      this.fetchData();
+      console.log(this.offline);
+      attachFastClick(document.body);
+      if(this.offline === 'up') {
+        this.fetchData(this.apiURL);
+      } else {
+        this.fetchData(this.localURL)
+      }
     },
 
     methods: {
-      fetchData: function() {
+      fetchData: function(url) {
         var self = this;
         request({
-          url: apiURL,
+          url: url,
           type: 'jsonp',
           jsonpCallback: 'callback',
           jsonpCallbackName: 'kimonoCallback',
@@ -75,10 +79,6 @@ var vm = new Vue({
 
 });
 
-domready(function() {
-  attachFastClick(document.body);
-});
-
 function findMyLocation(location, items) {
 
   var edmonton = new google.maps.LatLng(53.544389, -113.490927);
@@ -103,10 +103,10 @@ function findMyLocation(location, items) {
 
   function handleNoGeolocation(errorFlag) {
     if (errorFlag == true) {
-      alert("Geolocation service failed. Sorting by distance from downtown Edmonton instead.");
+      alert('Geolocation service failed. Sorting by distance from downtown Edmonton instead.');
       location = edmonton;
     } else {
-      alert("Sorry, your device does not support geolocation. Sorting by distance from downtown Edmonton instead.");
+      alert('Sorry, your device does not support geolocation. Sorting by distance from downtown Edmonton instead.');
       location = edmonton;
     }
     map.setCenter(initialLocation);
@@ -119,7 +119,7 @@ function findMyDistanceList(from, items) {
   var service = new google.maps.DistanceMatrixService();
   var myOptions = {
   };
-  var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+  var map = new google.maps.Map(document.getElementById('map-canvas'), myOptions);
 
   items.forEach(function(h, i) {
     service.getDistanceMatrix({

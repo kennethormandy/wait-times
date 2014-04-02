@@ -2,6 +2,9 @@
 @import "normalize";
 @import "bourbon/bourbon";
 @import "neat/neat";
+@import "modules/offline";
+
+$bar-height: 6em;
 
 * {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -25,11 +28,32 @@ p {
   margin: 0;
 }
 
+.header {
+  position: fixed;
+  width: 100%;
+  background: #FFF;
+  border-bottom: 1px solid black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.header-bar {
+  width: 100%;
+  display: block;
+  height: $bar-height / 2;
+  padding: 0.5em;
+  background: #FFF;
+  color: #000;
+  line-height: $bar-height / 3;
+  text-align: center;
+  font-weight: bold;
+}
+
 .form {
   display: block;
   clear: left;
   @include row;
   border-top: 1px solid black;
+  height: $bar-height / 2;
 }
 
 .radio-split {
@@ -40,9 +64,11 @@ p {
     width: 50%;
     display: block;
     float: left;
-    padding: 1em 1em 1.125em 1em;
+    padding: 1.25em;
     text-align: center;
-    line-height: 1.1;
+    line-height: 0.5;
+    height: $bar-height / 2;
+    box-shadow: inset 0px 0px 0 2px #FFF;
   }
   &:checked + label {
     border-radius: 5px;
@@ -64,6 +90,11 @@ p {
 
 .hList {
   border-top: 1px solid #000;
+  height: 100%;
+  display: block;
+  top: $bar-height;
+  position: relative;
+  z-index: -1;
 }
 
 .hItem {
