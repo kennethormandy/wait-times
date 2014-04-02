@@ -19,7 +19,8 @@
   "scripts": {
     "test": "mocha",
     "start": "browserify src/js/main.js -t debowerify -o src/js/bundle.js && harp server src",
-    "compile": "harp compile src www && browserify -t debowerify src/js/main.js -o www/js/bundle.js"
+    "compile": "harp compile src www && browserify -t debowerify src/js/main.js -o www/js/bundle.js",
+    "postinstall": "bower install offline"
   },
   "repository": {
     "type": "git",
