@@ -11,7 +11,7 @@
 
     <!-- Plugins -->
     <gap:plugin name="nl.x-services.plugins.launchmyapp" version="3.1.1">
-      <param name="URL_SCHEME" value="..." />
+      <param name="URL_SCHEME" value="wtms" />
     </gap:plugin>
 
     <preference name="orientation" value="portrait" />
