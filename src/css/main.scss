@@ -30,6 +30,8 @@ p {
 
 .header {
   position: fixed;
+  @include position(sticky);
+  height: $bar-height;
   width: 100%;
   background: #FFF;
   border-bottom: 1px solid black;
@@ -46,13 +48,13 @@ p {
   line-height: $bar-height / 3;
   text-align: center;
   font-weight: bold;
+  margin-top: -1px;
 }
 
 .form {
   display: block;
   clear: left;
   @include row;
-  border-top: 1px solid black;
   height: $bar-height / 2;
 }
 
@@ -68,12 +70,11 @@ p {
     text-align: center;
     line-height: 0.5;
     height: $bar-height / 2;
-    box-shadow: inset 0px 0px 0 2px #FFF;
   }
   &:checked + label {
     border-radius: 5px;
     font-weight: bold;
-    box-shadow: inset 0px 0px 0 2px #FFF;
+    box-shadow: inset 0px 0px 0 1px #FFF;
     background: #666;
     color: white;
   }
@@ -89,7 +90,6 @@ p {
 }
 
 .hList {
-  border-top: 1px solid #000;
   height: 100%;
   display: block;
   top: $bar-height;

@@ -4,3 +4,9 @@ components
 npm-debug.log
 www
 app
+*.zip
+
+# Cordova
+platforms/
+plugins/
+hooks/
