@@ -21,11 +21,11 @@ var vm = new Vue({
     created: function() {
       console.log(this.offline);
       attachFastClick(document.body);
-      if(this.offline === 'up') {
+      // if(this.offline === 'up') {
         this.fetchData(this.apiURL);
-      } else {
-        this.fetchData(this.localURL)
-      }
+      // } else {
+      //   this.fetchData(this.localURL)
+      // }
     },
 
     methods: {
@@ -41,9 +41,11 @@ var vm = new Vue({
             self.items.forEach(function(h, i) {
               h.name = h.hTitle.text.replace('\'', '’');
               h.id = h.hTitle.href.split('rid=')[1];
-              h.hours = h.hTimeOne.alt.toString() + h.hTimeTwo.alt.toString();
-              h.minutes = h.hTimeThree.alt.toString() + h.hTimeFour.alt.toString();
-              h.wait = h.hours + ':' + h.minutes;
+              if(h.hTimeOne.alt, h.hTimeTwo.alt, h.hTimeThree.alt, h.hTimeFour.alt) {
+                h.hours = h.hTimeOne.alt.toString() + h.hTimeTwo.alt.toString();
+                h.minutes = h.hTimeThree.alt.toString() + h.hTimeFour.alt.toString();
+                h.wait = h.hours + ':' + h.minutes;
+              }
               if(h.hDetails) {
                 h.details = h.hDetails;
               }

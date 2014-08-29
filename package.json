@@ -1,6 +1,6 @@
 {
   "name": "wait-times",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The average wait times in Edmonton and area hospitals.",
   "main": "harp server",
   "dependencies": {
@@ -33,5 +33,5 @@
   "bugs": {
     "url": "https://github.com/kennethormandy/wait-times/issues"
   },
-  "homepage": "http://kennethormandy.com"
+  "homepage": "http://wait.harp.io"
 }
