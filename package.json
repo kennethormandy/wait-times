@@ -18,12 +18,17 @@
   },
   "devDependencies": {
     "browserify": "~3.33.0",
-    "mocha": "~1.18.2"
+    "mocha": "~1.18.2",
+    "watchify": "~1.0.2"
   },
   "scripts": {
-    "test": "mocha",
-    "start": "browserify src/js/main.js -o src/js/bundle.js && harp server src",
-    "compile": "harp compile src www && browserify src/js/main.js -o www/js/bundle.js",
+    "build-js": "browserify public/js/main.js -o public/js/main.min.js",
+    "build": "npm run build-js",
+    "watch-js": "watchify public/js/main.js -o public/js/main.min.js -dv",
+    "watch": "npm run watch-js",
+    "start": "npm run watch-js & harp server -p 9966 & open http://localhost:9966",
+    "test": "echo \"Error: no test specified…yet! Pull requests on kennethormandy/wait-times are greatly appriciated.\" && exit 1",
+    "compile": "build && harp compile",
     "zip": "zip -r wait-times.zip www"
   }
 }
