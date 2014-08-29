@@ -16,5 +16,6 @@ plugins/
 hooks/
 merges/
 
-# Harp, Cordova
+# Harp & Browserify
 www
+src/js/bundle.js

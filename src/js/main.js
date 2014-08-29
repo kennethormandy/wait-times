@@ -3,8 +3,11 @@ var domready = require('domready');
 var attachFastClick = require('fastclick');
 var Vue = require('vue');
 var vueTouch = require('vue-touch');
+// Seems super hacky, not Browserify compatible?
+var offline = require('../../node_modules/offline-js/offline.min.js');
 
 Vue.use(vueTouch);
+
 var vm = new Vue({
 
     el: '#main',
@@ -14,18 +17,18 @@ var vm = new Vue({
       reverse: false,
       location: false,
       offline: Offline.state,
+      // offline: 'down',
       apiURL: 'http://www.kimonolabs.com/api/cutenv2y?apikey=4082701fda5e9ac55d10add137718ea6&callback=kimonoCallback',
       localURL: 'js/data.json'
     },
 
     created: function() {
-      console.log(this.offline);
       attachFastClick(document.body);
-      // if(this.offline === 'up') {
+      if(this.offline !== 'up') {
+        this.fetchData(this.localURL)
+      } else {
         this.fetchData(this.apiURL);
-      // } else {
-      //   this.fetchData(this.localURL)
-      // }
+      }
     },
 
     methods: {

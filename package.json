@@ -1,6 +1,6 @@
 {
   "name": "wait-times",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "The average wait times in Edmonton and area hospitals.",
   "main": "harp server",
   "dependencies": {
@@ -9,20 +9,18 @@
     "headroom.js": "git://github.com/WickyNilliams/headroom.js#v0.5.0",
     "reqwest": "~1.1.0",
     "vue": "~0.10.2",
-    "vue-touch": "0.0.1"
+    "vue-touch": "0.0.1",
+    "offline-js": "~0.7.11"
   },
   "devDependencies": {
     "browserify": "~3.33.0",
-    "debowerify": "~0.7.0",
-    "harp": "~0.11.2",
     "mocha": "~1.18.2"
   },
   "scripts": {
     "test": "mocha",
-    "start": "browserify src/js/main.js -t debowerify -o src/js/bundle.js && harp server src",
-    "compile": "harp compile src www && browserify -t debowerify src/js/main.js -o www/js/bundle.js",
-    "zip": "zip -r wait-times.zip www",
-    "postinstall": "bower install offline"
+    "start": "browserify src/js/main.js -o src/js/bundle.js && harp server src",
+    "compile": "harp compile src www && browserify src/js/main.js -o www/js/bundle.js",
+    "zip": "zip -r wait-times.zip www"
   },
   "repository": {
     "type": "git",
