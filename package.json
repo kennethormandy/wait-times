@@ -2,7 +2,11 @@
   "name": "wait-times",
   "version": "0.2.0",
   "description": "The average wait times in Edmonton and area hospitals.",
-  "main": "harp server",
+  "author": "Kenneth Ormandy",
+  "homepage": "http://wait.harp.io",
+  "private": true,
+  "license": "MIT",
+  "repository": "git://github.com/kennethormandy/wait-times.git",
   "dependencies": {
     "domready": "~1.0.4",
     "fastclick": "~1.0.0",
@@ -21,15 +25,5 @@
     "start": "browserify src/js/main.js -o src/js/bundle.js && harp server src",
     "compile": "harp compile src www && browserify src/js/main.js -o www/js/bundle.js",
     "zip": "zip -r wait-times.zip www"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kennethormandy/wait-times"
-  },
-  "author": "Kenneth Ormandy",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kennethormandy/wait-times/issues"
-  },
-  "homepage": "http://wait.harp.io"
+  }
 }
